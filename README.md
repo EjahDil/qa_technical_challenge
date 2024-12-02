@@ -56,5 +56,5 @@ npx install Playwright test tests/end-2-end
 - To view the test report run the following command
 
 `
-npx Playwright show-report
+npx playwright show-report
 `
