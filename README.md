@@ -33,28 +33,28 @@ git clone https://github.com/EjahDil/qa_technical_challenge.git
 cd qa_technical_challenge
 `
 
-- Once in the qa_technical_challenge folder run the following commands:
+- Once in the qa_technical_challenge folder run the following commands on your CLI:
 
-- To install required depedencies you run
+    - To install required depedencies you run
 
-`
-npm install
-`
+        `
+         npm install
+        `
 
-- To install the necessary browsers for playwright to run its test effectively you run
+    - To install the necessary browsers for playwright to run its test effectively you run
 
-`
-npx install Playwright --with-deps
-`
+        `
+        npx install Playwright --with-deps
+        `
 
-- To run the test run the following command
+    - To run the test run the following command
 
-`
-npx install Playwright test tests/end-2-end
-`
+        `
+        npx install Playwright test tests/end-2-end
+        `
 
-- To view the test report run the following command
-
-`
-npx playwright show-report
-`
+    - To view the test report run the following command
+        
+        `
+        npx playwright show-report
+        `
