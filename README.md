@@ -22,5 +22,36 @@ node --version
 - Clone this project repository by running the command on your CLI
 
 `
-git clone 
+git clone https://github.com/EjahDil/qa_technical_challenge.git
 `
+
+- Move to your terminal and navigate to the name of this repository by running the command
+
+`
+cd qa_technical_challenge
+`
+
+- Once in the qa_technical_challenge folder run the following commands:
+
+- To install required depedencies you run
+
+`
+npm install
+
+`
+
+- To install the necessary browsers for playwright to run it test effectively you run
+
+`
+npx install Playwright --with-deps
+
+`
+
+- To run the test run the following command
+
+`
+npx install Playwright test tests/end-2-end
+
+`
+
+
