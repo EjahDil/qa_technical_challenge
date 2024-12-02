@@ -8,7 +8,10 @@
 
 - Playwright Test Automation using the test cases designed during Exploratory testing.
 
-\vspace{1cm}
+
+
+
+
 
 
 
