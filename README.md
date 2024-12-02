@@ -1,4 +1,4 @@
-# qa_technical_challenge
+# Quality Assurance Technical Challenge
 
 ### This repository provides a comprehensive solution to the QA challenge outlined in the QAChallengeTask folder. The challenge included:
 
