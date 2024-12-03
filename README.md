@@ -48,13 +48,13 @@ cd qa_technical_challenge
     - To install the necessary browsers for playwright to run its test effectively you run
 
         `
-        npx install Playwright --with-deps
+        npx install playwright --with-deps
         `
 
     - To run the test run the following command
 
         `
-        npx install Playwright test tests/end-2-end
+        npx install playwright test tests/end-2-end
         `
 
 
