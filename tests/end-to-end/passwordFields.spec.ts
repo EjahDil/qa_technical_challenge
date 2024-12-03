@@ -21,10 +21,10 @@ test.describe('User Profile Creation - Password Validation Tests', () => {
           password: userProfileData.mandatory.password,
           confirmPassword: userProfileData.mandatory.password, // The confirm password matches the password
         });
-  
-        // Submit the form and ensure no error message appears
-         await form.submitFormAndCheckForErrors();
-
+          // Submit the form and check for error messages
+          const errorMessage = await form.submitFormAndCheckForErrors();
+          // Assert that at least one error message is present
+          expect(errorMessage).toHaveLength(0);
   
       // Fill the form with mismatched passwords and check for error message
       await form.fillMandatoryFields({
@@ -35,9 +35,9 @@ test.describe('User Profile Creation - Password Validation Tests', () => {
         confirmPassword: userProfileData.invalidMandatoryData.password, // Mismatched confirm password
       });
          // Submit the form and check for error messages
-          const errorMessage = await form.submitFormAndCheckForErrors();
+          const errorMessageTwo = await form.submitFormAndCheckForErrors();
          // Assert that at least one error message is present
-          expect(errorMessage.length).toBeGreaterThan(0);
+          expect(errorMessageTwo).toHaveLength(2);
     });
   });
   

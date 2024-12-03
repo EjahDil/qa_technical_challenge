@@ -143,9 +143,8 @@ test.describe('User Profile Creation - Valid Github URL Entry', () => {
            // Submit the form and check for error messages
            const errorMessage = await form.submitFormAndCheckForErrors();
 
-
            // Assert that at least one error message is present
-            expect(errorMessage.length).toBeGreaterThan(0);
+            expect(errorMessage).toHaveLength(1);
         
             // Fill the optional Github field with an invalid URL
             await form.fillOptionalFields({

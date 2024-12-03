@@ -13,7 +13,7 @@ export default class UserCreateForm {
     readonly emailInput = "#email";
     readonly passwordInput = "#password";
     readonly confirmPasswordInput = "#confirm-password";
-    readonly dobInput = "#date-of-birth";
+    // readonly dobInput = "#date-of-birth";
     readonly genderRadio = 'input[name="gender"]';
     readonly phoneNumberInput = "#phone-number";
     readonly addressInput = "#address";
@@ -60,7 +60,7 @@ export default class UserCreateForm {
       // Select the gender radio button based on its value
       await this.page.locator(`${this.genderRadio}[value="${data.gender}"]`).first().click();
     }
-    if (data.dob) await this.page.fill(this.dobInput, data.dob);
+    // if (data.dob) await this.page.fill(this.dobInput, data.dob);
     if (data.phoneNumber) await this.page.fill(this.phoneNumberInput, data.phoneNumber);
     if (data.address) await this.page.fill(this.addressInput, data.address);
     if (data.linkedin) await this.page.fill(this.linkedinInput, data.linkedin);
@@ -75,10 +75,11 @@ export default class UserCreateForm {
     // Wait for the form to process
     await this.page.waitForTimeout(1000);
   
-    // Get all paragraph elements immediately following input fields
+    // Get all paragraph elements immediately following input fields using the input fields ids
     const inputSelectors = ['#first-name', '#last-name', '#email', '#password', '#confirm-password'];
     const errorMessages: string[] = [];
-  
+
+      // Looping through the array of input fields ids
     for (const selector of inputSelectors) {
       const inputField = this.page.locator(selector);
   

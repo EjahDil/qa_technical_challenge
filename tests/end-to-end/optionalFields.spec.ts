@@ -57,7 +57,7 @@ test.describe('User Profile Creation - Phone Number Validation Tests', () => {
 
         // Use the fillOptionalFields method to fill the invalid phone number field
         await form.fillOptionalFields({
-            phoneNumber: userProfileData.invalidOptionalDataTwo.phoneNumber, // Invalid phone number
+            phoneNumber: userProfileData.invalidOptionalDataTwo.phoneNumber, // Second Invalid phone number
           });
     
           // Submit the form and check for error messages

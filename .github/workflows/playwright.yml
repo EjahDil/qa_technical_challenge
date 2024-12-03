@@ -53,17 +53,17 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: |
-          npm ci  # Use `npm install` or `npm ci` to install dependencies needed to run the playwright test
+          npm ci  #  `npm ci` command to install dependencies needed to run the playwright test
           
       # Install Playwright dependencies (e.g., for browser installations)
       - name: Install Playwright browsers
         run: |
-          npx playwright install  # Install the necessary browsers for Playwright tests
+          npx playwright install --with-deps  # Install the necessary browsers for Playwright tests with all the require
 
       # Run Playwright tests
       - name: Run Playwright tests
         run: |
-          npx playwright test  # You can specify your test command here
+          npx playwright test tests/end-to-end
 
       # Upload test results 
       - name: Upload HTML report
@@ -71,6 +71,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: playwright-html-report
-          path: test-results/  # Specify the path to your test results
+          path: QaChallengeTasks & htmlReport/  # The folder that will contain the html report uploaded. 
 
 

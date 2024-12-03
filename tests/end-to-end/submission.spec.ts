@@ -25,8 +25,8 @@ test.describe('User Profile Creation - Blank Form Submission Test', () => {
  // Submit the form and check for error messages
     const errorMessage = await form.submitFormAndCheckForErrors();
 
-    // Assert that at least one error message is present
-      expect(errorMessage.length).toBeGreaterThan(4);
+    // Assert that at exactly five error messages are present
+      expect(errorMessage).toHaveLength(5);
       });
 });
 

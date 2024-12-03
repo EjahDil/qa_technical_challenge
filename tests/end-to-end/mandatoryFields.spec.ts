@@ -22,39 +22,45 @@ test.describe('User Profile Creation - First Name Validation Tests', () => {
         confirmPassword: userProfileData.mandatory.password,
       });
   
-      // Submit the form and ensure no error message appears
-      await form.submitFormAndCheckForErrors(); // This will check that there are no error messages
+      // Submit the form and check for error messages
+      const errorMessage = await form.submitFormAndCheckForErrors();
+
+      // Assert that at least one error message is present
+      expect(errorMessage).toHaveLength(0);
+ 
+// This will check that there are no error messages
   
       // TC003 - Invalid first name entry with non-alphabetical characters
       await form.fillMandatoryFields({
         firstName: userProfileData.invalidMandatoryData.firstName,  // Invalid first name with numbers and special characters
-        lastName: userProfileData.blankData.lastName,
-        email: userProfileData.blankData.email,
-        password: userProfileData.blankData.password,
-        confirmPassword: userProfileData.blankData.password,
+        lastName: userProfileData.mandatory.lastName,
+        email: userProfileData.mandatory.email,
+        password: userProfileData.mandatory.password,
+        confirmPassword: userProfileData.mandatory.password,
       });
-   // Submit the form and check for error messages
-   const errorMessage = await form.submitFormAndCheckForErrors();
 
-   // Assert that at least one error message is present
-    expect(errorMessage.length).toBeGreaterThan(0); // This should trigger an error for invalid first name
+     // Submit the form and check for error messages
+   const errorMessageOne = await form.submitFormAndCheckForErrors();
+
+      // Assert that at least one error message is present
+      expect(errorMessageOne).toHaveLength(1);
 
 
 
       // Another invalid first name entry with special characters
       await form.fillMandatoryFields({
         firstName: userProfileData.invalidMandatoryDataTwo.firstName,  // Invalid first name with special characters
-        lastName: userProfileData.blankData.lastName,
-        email: userProfileData.blankData.email,
-        password: userProfileData.blankData.password,
-        confirmPassword: userProfileData.blankData.password,
+        lastName: userProfileData.mandatory.lastName,
+        email: userProfileData.mandatory.email,
+        password: userProfileData.mandatory.password,
+        confirmPassword: userProfileData.mandatory.password,
       });
    // Submit the form and check for error messages
    const errorMessageTwo = await form.submitFormAndCheckForErrors();
 
 
    // Assert that at least one error message is present
-    expect(errorMessageTwo.length).toBeGreaterThan(0);
+    expect(errorMessageTwo).toHaveLength(1);
       
     });
   });
@@ -102,7 +108,7 @@ test.describe('User Profile Creation - First Name Validation Tests', () => {
 
 
         // Assert that at least one error message is present
-         expect(errorMessageTwo.length).toBeGreaterThan(0); // This should trigger an error for invalid last name
+         expect(errorMessageTwo).toHaveLength(1); 
 
 
 
@@ -121,7 +127,7 @@ test.describe('User Profile Creation - First Name Validation Tests', () => {
 
 
          // Assert that at least one error message is present
-          expect(errorMessageThree.length).toBeGreaterThan(0); // This should trigger an error for invalid last name
+          expect(errorMessageThree).toHaveLength(1);
     
   
     });
@@ -166,7 +172,7 @@ test.describe('User Profile Creation - Email Validation Tests', () => {
         const errorMessageTwo =  await form.submitFormAndCheckForErrors();
 
         // Assert that at least one error message is present
-        expect(errorMessageTwo.length).toBeGreaterThan(0);
+        expect(errorMessageTwo).toHaveLength(1);
 
 
         // Fill the form with invalid email and check for error messages
@@ -184,7 +190,7 @@ test.describe('User Profile Creation - Email Validation Tests', () => {
 
 
         // Assert that at least one error message is present
-         expect(errorMessageThree.length).toBeGreaterThan(0);
+         expect(errorMessageThree).toHaveLength(1);
     });
   });
   
