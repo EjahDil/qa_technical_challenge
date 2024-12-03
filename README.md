@@ -56,8 +56,23 @@ cd qa_technical_challenge
         npx install Playwright test tests/end-2-end
         `
 
+
+    - Incase you want to run a test on a particular test file found in the end-2-end follow run
+        
+        `
+        npx playwright test tests/end-2-end/<name of the test file>
+        `
+
+
     - To view the test report run the following command
         
         `
         npx playwright show-report
         `
+
+
+
+# Limitations
+- During the implementation of the automated tests using Playwright, challenges were encountered with using the WebKit browser. As a result,  I disabled the functionality for running tests with the WebKit browser.
+
+- The main issue preventing the use of WebKit browsers in the automated tests was the lack of certain dependencies on my local machine. These dependencies are required to run the tests with WebKit. To resolve this, I will need to take time to review the relevant documentation and properly install the required dependencies on my Debian Bullseye Linux operating system.
