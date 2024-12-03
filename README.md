@@ -60,14 +60,14 @@ cd qa_technical_challenge
     - To run the test run the following command
 
         `
-        npx install playwright test tests/end-2-end
+        npx install playwright test tests/end-to-end
         `
 
 
-    - Incase you want to run a test on a particular test file found in the end-2-end follow run
+    - Incase you want to run a test on a particular test file found in the end-to-end folder, run
         
         `
-        npx playwright test tests/end-2-end/<name of the test file>
+        npx playwright test tests/end-to-end/<name of the test file>
         `
 
 
