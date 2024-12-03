@@ -45,7 +45,7 @@ cd qa_technical_challenge
          code .
         `
 
-    - To install required depedencies you run
+    - To install required depedencies, you run
 
         `
          npm install
@@ -57,7 +57,7 @@ cd qa_technical_challenge
         npx install playwright --with-deps
         `
 
-    - To run the test run the following command
+    - To perform the test, run the following command
 
         `
         npx install playwright test tests/end-to-end
