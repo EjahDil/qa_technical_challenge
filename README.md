@@ -16,7 +16,7 @@
 
 
 # Project Setup
-### Follow the instructions below to run the test properly on your local computer
+### Follow the instructions below properly to run the test on your local computer
 
 - Make sure you have node.js installed on your local computer. To check if node.js is installed on your local, move to your CLI and type
 
