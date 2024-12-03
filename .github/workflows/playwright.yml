@@ -71,7 +71,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: playwright-html-report
-          path: QaChallengeTasks & htmlReport/  # The folder that will contain the html report uploaded.
+          path: playwright-report/    # The folder that will contain the generated html report.
 
     move-artifact-to-repo:
           runs-on: ubuntu-latest
@@ -89,20 +89,21 @@ jobs:
                 name: playwright-html-report
                 path: temp-artifact  # Temporary folder for artifact extraction
 
-                # Overwrite only HTML files in the existing folder
+                   # Overwrite only HTML files in the existing folder
             - name: Move HTML report to existing folder
               run: |
-                 cp -r temp-artifact/*.html QaChallengeTasks & htmlTestReport/
-
-            # Commit and push the updated report to the repository
-            - name: Commit and push updated report
-              run: |
-                git config user.name "GitHub Actions"
-                git config user.email "actions@github.com"
-                git add QaChallengeTasks/htmlReport/
-                git commit -m "Update Playwright HTML report from artifact [CI]"
-                git push
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+                    # Ensure that the directory exists and handle special characters in the path
+                    mkdir -p "QaChallengeTasks & htmlTestReport"
+                    cp temp-artifact/*.html "QaChallengeTasks & htmlTestReport/"
 
 
+          # Commit and push the updated report to the repository
+          - name: Commit and push updated report
+            run: |
+              git config user.name "GitHub Actions"
+              git config user.email "actions@github.com"
+              git add "QaChallengeTasks & htmlTestReport/"
+              git commit -m "Update Playwright HTML report from artifact [CI]"
+              git push
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
