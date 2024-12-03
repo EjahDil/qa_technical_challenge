@@ -4,7 +4,7 @@
 
 - Visual (UI) Testing: Comparing three interfaces by evaluating the Figma design (expected interface) against the developer's implementation.
 
-- Exploratory Analysis on the User Profile Creation web form found at https://playwright-lab.web.app/, which resulted in a detailed test and bug report.
+- Exploratory Analysis on the User Profile Creation web form found at https://playwright-lab.web.app/, which resulted in a detailed test and bug reports.
 
 - Playwright Test Automation using the test cases designed during Exploratory testing.
 
@@ -16,6 +16,7 @@
 
 
 # Project Setup
+### Follow the instructions below to run the test properly on your local computer
 
 - Make sure you have node.js installed on your local computer. To check if node.js is installed on your local, move to your CLI and type
 
