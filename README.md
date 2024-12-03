@@ -4,7 +4,7 @@
 
 - Visual (UI) Testing: Comparing three interfaces by evaluating the Figma design (expected interface) against the developer's implementation.
 
-- Exploratory Analysis on the User Profile Creation web form found at href{https://playwright-lab.web.app/}, which resulted in a detailed test and bug report.
+- Exploratory Analysis on the User Profile Creation web form found at https://playwright-lab.web.app/, which resulted in a detailed test and bug report.
 
 - Playwright Test Automation using the test cases designed during Exploratory testing.
 
