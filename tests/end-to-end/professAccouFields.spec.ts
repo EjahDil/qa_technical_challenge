@@ -66,6 +66,17 @@ test('TC016 - Test for invalid LinkedIn URL entry', async ({ page }) => {
    // Assert that at least one error message is present
     expect(errorMessage).toHaveLength(1);
 
+
+
+    // Fill the form with mandatory fields
+    await form.fillMandatoryFields({
+      firstName: userProfileData.mandatory.firstName,
+      lastName: userProfileData.mandatory.lastName,
+      email: userProfileData.mandatory.email,
+      password: userProfileData.mandatory.password,
+      confirmPassword: userProfileData.mandatory.confirmPassword,
+    });
+
     // Fill the optional LinkedIn field with an invalid URL
     await form.fillOptionalFields({
         linkedin: userProfileData.invalidOptionalDataTwo.linkedin
@@ -145,6 +156,15 @@ test.describe('User Profile Creation - Valid Github URL Entry', () => {
 
            // Assert that at least one error message is present
             expect(errorMessage).toHaveLength(1);
+
+            // Fill the form with mandatory fields
+            await form.fillMandatoryFields({
+              firstName: userProfileData.mandatory.firstName,
+              lastName: userProfileData.mandatory.lastName,
+              email: userProfileData.mandatory.email,
+              password: userProfileData.mandatory.password,
+              confirmPassword: userProfileData.mandatory.confirmPassword,
+            });
         
             // Fill the optional Github field with an invalid URL
             await form.fillOptionalFields({
