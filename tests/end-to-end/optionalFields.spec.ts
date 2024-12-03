@@ -4,7 +4,7 @@ import { expect, test} from "@playwright/test";
 
 
 test.describe('User Profile Creation - Phone Number Validation Tests', () => {
-    test('TC012 & TC013 - Test valid and invalid phone number entries', async ({ page }) => {
+    test('TC012 - Test valid phone number entry', async ({ page }) => {
   
       // Navigate to the User Profile Creation form page
       await page.goto('https://playwright-lab.web.app/');
@@ -32,6 +32,19 @@ test.describe('User Profile Creation - Phone Number Validation Tests', () => {
             // Assert that the errorMessages array is empty
             expect(errorMessage).toHaveLength(0);
       
+    });
+  });
+
+
+  test.describe('User Profile Creation - Phone Number Validation Tests', () => {
+    test('TC013 - Test invalid phone number entries', async ({ page }) => {
+  
+      // Navigate to the User Profile Creation form page
+      await page.goto('https://playwright-lab.web.app/');
+  
+      // Create an instance of the UserCreateForm class
+      const form = new UserCreateForm(page);
+      
   
         // Fill the form with invalid phone number and check for error messages
         await form.fillMandatoryFields({
@@ -55,6 +68,17 @@ test.describe('User Profile Creation - Phone Number Validation Tests', () => {
 
 
 
+
+  
+        // Fill the form with invalid phone number and check for error messages
+        await form.fillMandatoryFields({
+          firstName: userProfileData.mandatory.firstName,
+          lastName: userProfileData.mandatory.lastName,
+          email: userProfileData.mandatory.email,
+          password: userProfileData.mandatory.password,
+          confirmPassword: userProfileData.mandatory.password,
+        });
+
         // Use the fillOptionalFields method to fill the invalid phone number field
         await form.fillOptionalFields({
             phoneNumber: userProfileData.invalidOptionalDataTwo.phoneNumber, // Second Invalid phone number
@@ -67,6 +91,8 @@ test.describe('User Profile Creation - Phone Number Validation Tests', () => {
            expect(errorMessageThree).toHaveLength(1);
     });
   });
+
+
 
 
 

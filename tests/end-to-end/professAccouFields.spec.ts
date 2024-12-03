@@ -119,7 +119,7 @@ test.describe('User Profile Creation - Valid Github URL Entry', () => {
 
     test.describe('User Profile Creation - Invalid Github URL Entry', () => {
 
-        test('TC016 - Test for invalid Github URL entry', async ({ page }) => {
+        test('TC018 - Test for invalid Github URL entry', async ({ page }) => {
 
              // Navigate to the User Profile Creation form page
             await page.goto('https://playwright-lab.web.app/');
