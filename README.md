@@ -39,6 +39,12 @@ cd qa_technical_challenge
 
 - Once in the qa_technical_challenge folder run the following commands on your CLI:
 
+    - To run the test using VS Code inbuilt CLI (Optional) you run the command below first
+      
+        `
+         code .
+        `
+
     - To install required depedencies you run
 
         `
