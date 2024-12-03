@@ -1,6 +1,6 @@
 # Quality Assurance Technical Challenge
 
-### This repository provides a comprehensive solution to the QA challenge outlined in the QAChallengeTask folder. The challenge included:
+### This repository provides a comprehensive solution to the QA challenge outlined in the QAChallengeTasks folder. The challenge included:
 
 - Visual (UI) Testing: Comparing three interfaces by evaluating the Figma design (expected interface) against the developer's implementation.
 
