@@ -4,7 +4,7 @@
 
 - Visual (UI) Testing: Comparing three interfaces by evaluating the Figma design (expected interface) against the developer's implementation.
 
-- Exploratory Analysis on the User Profile Creation web form found at https://playwright-lab.web.app/, which resulted in a detailed test and bug report.
+- Exploratory Analysis on the User Profile Creation web form found at https://playwright-lab.web.app/, which resulted in a detailed test and bug reports.
 
 - Playwright Test Automation using the test cases designed during Exploratory testing.
 
@@ -16,6 +16,7 @@
 
 
 # Project Setup
+### Follow the instructions below properly to run the test on your local computer
 
 - Make sure you have node.js installed on your local computer. To check if node.js is installed on your local, move to your CLI and type
 
@@ -38,22 +39,28 @@ cd qa_technical_challenge
 
 - Once in the qa_technical_challenge folder run the following commands on your CLI:
 
+    - To run the test using VS Code inbuilt CLI (Optional) you run the command below first
+      
+        `
+         code .
+        `
+
     - To install required depedencies you run
 
         `
          npm install
         `
 
-    - To install the necessary browsers for playwright to run its test effectively you run
+    - To install the necessary browsers for playwright to run its test effectively, you run
 
         `
-        npx install Playwright --with-deps
+        npx install playwright --with-deps
         `
 
     - To run the test run the following command
 
         `
-        npx install Playwright test tests/end-2-end
+        npx install playwright test tests/end-2-end
         `
 
 
