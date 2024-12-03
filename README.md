@@ -45,7 +45,7 @@ cd qa_technical_challenge
          npm install
         `
 
-    - To install the necessary browsers for playwright to run its test effectively you run
+    - To install the necessary browsers for playwright to run its test effectively, you run
 
         `
         npx install playwright --with-deps
