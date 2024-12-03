@@ -27,7 +27,6 @@
 #         retention-days: 30
 
 
-
 name: Playwright Automation Tests
 
 on:
@@ -72,38 +71,3 @@ jobs:
         with:
           name: playwright-html-report
           path: playwright-report/    # The folder that will contain the generated html report.
-
-    move-artifact-to-repo:
-          runs-on: ubuntu-latest
-          needs: playwright-tests
-
-          steps:
-            # Checkout the repository to the GitHub runner
-            - name: Checkout repository
-              uses: actions/checkout@v3
-
-            # Download the artifact
-            - name: Download artifact
-              uses: actions/download-artifact@v3
-              with:
-                name: playwright-html-report
-                path: temp-artifact  # Temporary folder for artifact extraction
-
-                   # Overwrite only HTML files in the existing folder
-            - name: Move HTML report to existing folder
-              run: |
-                    # Ensure that the directory exists and handle special characters in the path
-                    mkdir -p "QaChallengeTasks & htmlTestReport"
-                    cp temp-artifact/*.html "QaChallengeTasks & htmlTestReport/"
-
-
-          # Commit and push the updated report to the repository
-          - name: Commit and push updated report
-            run: |
-              git config user.name "GitHub Actions"
-              git config user.email "actions@github.com"
-              git add "QaChallengeTasks & htmlTestReport/"
-              git commit -m "Update Playwright HTML report from artifact [CI]"
-              git push
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
